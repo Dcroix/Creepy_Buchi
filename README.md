@@ -1,40 +1,37 @@
-\# Mythical Creatures Dataset
-
+#  Mythical Creatures Dataset
 
 
 A structured dataset of global ghosts, cryptids, monsters, and mythological beings.
 
 
-
-\## Structure
+## Structure
 
 Each entry contains:
 
-\- name
+- name
 
-\- category
+- category
 
-\- origin\_country
+- origin\_country
 
-\- culture
+- culture
 
-\- image\_prompt (for AI generation)
+- image\_prompt (for AI generation)
 
-\- description
+- description
 
-\- latitude
+- latitude
 
-\- longitude
+- longitude
 
 
 
-\## Purpose
+## Purpose
 
 For AI image generation, GIS mapping, storytelling, and research.
 
 
 
-\## License
-
-MIT
+## License
+GPL3
 
