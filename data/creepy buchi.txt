@@ -1,0 +1,427 @@
+import pandas as pd
+
+creatures = [
+    {
+        "name": "Aswang",
+        "country": "Philippines",
+        "image_prompt": "Terrifying Filipino aswang shapeshifter with glowing eyes, nocturnal tropical village, cinematic horror, ultra-detailed",
+        "description": "A shape-shifting monster from Philippine folklore often associated with vampirism and predation.",
+        "latitude": 12.8797,
+        "longitude": 121.7740
+    },
+    {
+        "name": "Manananggal",
+        "country": "Philippines",
+        "image_prompt": "Winged female creature separated at the waist flying over a moonlit village, dark fantasy realism",
+        "description": "A vampire-like creature that detaches its upper torso and flies at night.",
+        "latitude": 12.8797,
+        "longitude": 121.7740
+    },
+    {
+        "name": "Tikbalang",
+        "country": "Philippines",
+        "image_prompt": "Tall humanoid horse-headed creature standing in a misty forest trail, folklore realism",
+        "description": "A trickster creature with the head of a horse and body of a human.",
+        "latitude": 12.8797,
+        "longitude": 121.7740
+    },
+    {
+        "name": "Wendigo",
+        "country": "Canada",
+        "image_prompt": "Gaunt antlered spirit in snowy pine forest, eerie atmosphere, hyperrealistic horror",
+        "description": "A cannibalistic spirit from Algonquian folklore.",
+        "latitude": 56.1304,
+        "longitude": -106.3468
+    },
+    {
+        "name": "Bigfoot",
+        "country": "United States",
+        "image_prompt": "Large hairy ape-like cryptid walking through Pacific Northwest forest, photorealistic",
+        "description": "Legendary ape-like cryptid reported throughout North America.",
+        "latitude": 39.8283,
+        "longitude": -98.5795
+    },
+    {
+        "name": "Mothman",
+        "country": "United States",
+        "image_prompt": "Winged humanoid with glowing red eyes perched on a bridge at night, cinematic horror",
+        "description": "Winged cryptid associated with sightings in West Virginia.",
+        "latitude": 39.8283,
+        "longitude": -98.5795
+    },
+    {
+        "name": "Loch Ness Monster",
+        "country": "Scotland",
+        "image_prompt": "Long-necked aquatic creature emerging from foggy lake waters, realistic photography style",
+        "description": "Cryptid believed to inhabit Loch Ness.",
+        "latitude": 56.4907,
+        "longitude": -4.2026
+    },
+    {
+        "name": "Banshee",
+        "country": "Ireland",
+        "image_prompt": "Ghostly woman in flowing white robes wailing on misty moorlands, haunting atmosphere",
+        "description": "Spirit whose cry foretells death.",
+        "latitude": 53.1424,
+        "longitude": -7.6921
+    },
+    {
+        "name": "Jiangshi",
+        "country": "China",
+        "image_prompt": "Ancient hopping vampire in Qing dynasty clothing, moonlit temple courtyard",
+        "description": "Reanimated corpse that hops and drains life energy.",
+        "latitude": 35.8617,
+        "longitude": 104.1954
+    },
+    {
+        "name": "Jorogumo",
+        "country": "Japan",
+        "image_prompt": "Beautiful woman transforming into giant spider in bamboo forest, Japanese folklore art",
+        "description": "Spider yokai capable of taking human form.",
+        "latitude": 36.2048,
+        "longitude": 138.2529
+    },
+    {
+        "name": "Oni",
+        "country": "Japan",
+        "image_prompt": "Massive red-skinned horned demon wielding iron club, dramatic Japanese mythology scene",
+        "description": "Powerful ogre-like demon from Japanese folklore.",
+        "latitude": 36.2048,
+        "longitude": 138.2529
+    },
+    {
+        "name": "Yeti",
+        "country": "Nepal",
+        "image_prompt": "Gigantic ape-like creature in snowy Himalayan mountains, realistic wildlife photography",
+        "description": "Legendary Himalayan cryptid.",
+        "latitude": 28.3949,
+        "longitude": 84.1240
+    },
+    {
+        "name": "Chupacabra",
+        "country": "Puerto Rico",
+        "image_prompt": "Reptilian canine cryptid with glowing eyes stalking livestock at night",
+        "description": "Creature blamed for attacks on livestock.",
+        "latitude": 18.2208,
+        "longitude": -66.5901
+    },
+    {
+        "name": "La Llorona",
+        "country": "Mexico",
+        "image_prompt": "Weeping ghost woman beside river at night, supernatural realism",
+        "description": "Ghostly woman mourning her children.",
+        "latitude": 23.6345,
+        "longitude": -102.5528
+    },
+    {
+        "name": "Kraken",
+        "country": "Norway",
+        "image_prompt": "Colossal tentacled sea monster attacking wooden ship during storm, epic fantasy realism",
+        "description": "Legendary giant sea creature.",
+        "latitude": 60.4720,
+        "longitude": 8.4689
+    },
+    {
+        "name": "Draugr",
+        "country": "Iceland",
+        "image_prompt": "Undead Viking warrior emerging from burial mound, dark fantasy realism",
+        "description": "Revenant from Norse folklore.",
+        "latitude": 64.9631,
+        "longitude": -19.0208
+    },
+    {
+        "name": "Kelpie",
+        "country": "Scotland",
+        "image_prompt": "Black water horse emerging from misty loch, eerie folklore atmosphere",
+        "description": "Shape-shifting water spirit.",
+        "latitude": 56.4907,
+        "longitude": -4.2026
+    },
+    {
+        "name": "Baba Yaga",
+        "country": "Russia",
+        "image_prompt": "Ancient witch in hut on chicken legs deep in enchanted forest",
+        "description": "Powerful witch from Slavic folklore.",
+        "latitude": 61.5240,
+        "longitude": 105.3188
+    },
+    {
+        "name": "Leshy",
+        "country": "Russia",
+        "image_prompt": "Forest spirit with bark skin and glowing eyes among ancient trees",
+        "description": "Guardian spirit of forests.",
+        "latitude": 61.5240,
+        "longitude": 105.3188
+    },
+    {
+        "name": "Pontianak",
+        "country": "Indonesia",
+        "image_prompt": "Pale ghost woman with long black hair standing among banana trees at night",
+        "description": "Spirit of a woman who died in childbirth.",
+        "latitude": -0.7893,
+        "longitude": 113.9213
+    }
+]
+
+df = pd.DataFrame(creatures)
+
+print(df.head())
+print(f"Rows: {len(df)}")
+
+
+
+🧟 Ghosts, Spirits & Revenants
+
+Banshee
+Dullahan
+Bean Nighe
+La Llorona
+White Lady
+Grey Lady
+Pontianak
+Kuntilanak
+Sadako
+Kayako
+Yūrei
+Onryō
+Zashiki-warashi
+Goryō
+Hungry Ghost
+Penanggalan
+Aswang (spirit form)
+Manananggal
+Kapre (spirit form)
+Tiyanak
+Tikbalang (spirit form)
+Djinn (ghost/spirits classification varies)
+Ifrit
+Marid
+Shtriga
+Nachzehrer
+Revenant
+Draugr
+Wraith
+Specter
+Poltergeist
+Apparition
+Shadow Person
+
+🐺 Cryptids (Modern Unknown Creatures)
+
+Bigfoot
+Sasquatch
+Yeti
+Abominable Snowman
+Skunk Ape
+Mothman
+Chupacabra
+Jersey Devil
+Flatwoods Monster
+Dover Demon
+Loveland Frogman
+Bear Lake Monster
+Owlman
+Fresno Nightcrawler
+Rake
+Wendigo (cryptid interpretation)
+Dogman
+Thunderbird (cryptid interpretation)
+Mapinguari
+Nahuelito
+Buru
+Kushtaka
+Ahool
+Mongolian Death Worm
+Skvader
+Snallygaster
+Squonk
+Altamaha-ha
+Mokele-mbembe
+Nguma-monene
+Grootslang
+Waheela
+
+🐉 Dragons, Serpents & Draconic Beings
+
+Dragon (general archetype)
+European Dragon
+Chinese Long
+Japanese Ryū
+Korean Yong
+Wyvern
+Amphiptere
+Hydra
+Lindworm
+Cockatrice
+Basilisk
+Quetzalcoatl
+Apep
+Jörmungandr
+Níðhöggr
+Fafnir
+Tiamat
+Leviathan
+Zmey Gorynych
+Piasa
+Nāga
+Mucalinda
+Rainbow Serpent
+Bakunawa
+Imugi
+
+👹 Demons, Devils & Infernal Entities
+
+Oni
+Akuma
+Yokai Oni variants
+Asmodeus
+Beelzebub
+Lucifer
+Satan
+Azazel
+Belial
+Baal
+Astaroth
+Lilith
+Succubus
+Incubus
+Pazuzu
+Lamashtu
+Hannya
+Rakshasa
+Vetala
+Pishacha
+Daeva
+Div
+Ifrit
+Marid
+Ghoul
+Vetala
+Mara (demon form interpretations)
+
+🧙 Shape-shifters & Hybrid Beings
+
+Werewolf
+Lycan
+Skinwalker
+Wendigo (some traditions)
+Selkie
+Kelpie
+Kitsune
+Tanuki
+Huli Jing
+Bakeneko
+Nekomata
+Aswang
+Manananggal
+Tikbalang
+Amarok
+Loup-garou
+Nagual
+Encantado
+Boto
+Selma (regional variants)
+
+🧌 Giants, Trolls & Humanoid Monsters
+
+Cyclops
+Minotaur
+Cyclops Polyphemus
+Jötunn
+Frost Giant
+Fire Giant
+Troll
+Bridge Troll
+Mountain Giant
+Hecatoncheires
+Fomorian
+Ogre
+Bugbear
+Ettin
+Formless Giant Spirits (various folklore)
+
+🧜 Aquatic Creatures & Sea Monsters
+
+Kraken
+Leviathan (sea interpretation)
+Scylla
+Charybdis
+Mermaid
+Siren
+Ningyo
+Kappa
+Kelpie
+Nixie
+Rusalka
+Selkie (aquatic form)
+Lusca
+Cadborosaurus
+Sea Serpent
+Aspidochelone
+Bakunawa (sea dragon form)
+Makara
+Bunyip
+Tsuchinoko (sometimes aquatic cryptid)
+
+🦅 Flying & Sky Entities
+
+Thunderbird
+Garuda
+Roc
+Simurgh
+Harpies
+Tengu
+Fenghuang
+Zu
+Strix
+Amphiptere
+Winged Djinn variants
+Ziz
+Vodyanoy (aerial folklore variants exist)
+
+🏺 Mythological Monsters (Classical Traditions)
+
+Medusa
+Gorgon
+Cerberus
+Chimera
+Sphinx
+Minotaur
+Hydra
+Satyr (monstrous interpretations)
+Centaur (sometimes monstrous classification)
+Scylla
+Charybdis
+Typhon
+Echidna
+Empusa
+Erymanthian Boar
+Colchis Dragon
+Talos
+Hippocamp
+Arimaspians
+Griffin
+
+🌏 Regional & Folk Entities (Mixed Global)
+
+La Ciguapa (Dominican Republic)
+El Cuero (Chile)
+Pishtaco (Peru)
+Tunda (Colombia)
+Alicanto (Chile)
+Camazotz (Maya)
+Cadejo (Central America)
+Nahual (Mesoamerica)
+Tikoloshe (Southern Africa)
+Adze (Ewe mythology)
+Obayifo (West Africa)
+Asanbosam (West Africa)
+Baba Yaga (Slavic)
+Leshen (Slavic)
+Domovoi (Slavic)
+Rusalka (Slavic)
+Bannik (Slavic)
+Pontianak (Southeast Asia)
+Penanggalan (Southeast Asia)
+Toyol (Malaysia/Indonesia)
+Orang Bunian (Malay folklore)
